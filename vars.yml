@@ -8,8 +8,8 @@
     - name: print url
       debug:
         msg: url= {{url}}
-    - name: print URL from task
+    - name: print url from task
       debug:
-        msg: URL = {{URL}}
+        msg: url = {{url}}
       vars:
-        URL: task.example.com
+        url: task.example.com
