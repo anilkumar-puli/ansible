@@ -3,8 +3,13 @@
    hosts: localhost
    vars:
      url: play.example.com
+     PROJECT: example
    tasks:
     - name: print url
       debug:
         msg: url= {{url}}
-
+    - name: print URL from task
+      debug:
+        msg: URL = {{URL}}
+      vars:
+        URL: task.example.com
