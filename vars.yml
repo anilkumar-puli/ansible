@@ -1,4 +1,3 @@
-
  - name: demo on vars
    hosts: localhost
    vars:
