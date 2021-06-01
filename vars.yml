@@ -47,7 +47,7 @@
           msg: DATE ={{ DATE }}
 
   - name: print somefacts
-    hosts: all
+    hosts: localhost
     tasks:
       - name: print some facts
         debug:
