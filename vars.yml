@@ -35,4 +35,4 @@
         register: out
       - name: print Date
         debug:
-          msg: Date= {{ out }}
+          msg: Date= {{ out.stdout }}
