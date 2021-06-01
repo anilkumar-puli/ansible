@@ -45,3 +45,12 @@
       - name: print DATE
         debug:
           msg: DATE ={{ DATE }}
+
+      - name: print somefacts
+        hosts: all
+        tasks:
+          - name: print some facts
+            debug:
+              msg: Hostname == {{ ansible_hostname }}
+
+
