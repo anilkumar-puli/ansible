@@ -1,8 +1,13 @@
  - name: demo on vars
    hosts: localhost
-   vars:
-     url: play.example.com
-     PROJECT: example
+  # vars_files:
+   #  - example-vars.yml
+   #vars:
+    # url: play.example.com
+    # PROJECT: example
+   #vars_prompt:
+    # - name: url
+     #  prompt: ENTER url
    tasks:
     - name: print url
       debug:
@@ -12,3 +17,7 @@
         msg: url = {{url}}
       vars:
         url: task.example.com
+#........varialble precedence.............
+#tasks
+#vars_files
+#vars
