@@ -33,6 +33,15 @@
       - name: gather date
         shell: date +%F
         register: out
+
       - name: print Date
         debug:
           msg: Date= {{ out.stdout }}
+
+      - name: set a fact
+        set_fact:
+          DATE: "{{out.stdout}}"
+
+      - name: print DATE
+        debug:
+          msg: DATE ={{ DATE }}
