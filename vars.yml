@@ -48,9 +48,9 @@
 
   - name: print somefacts
     hosts: all
-      tasks:
-       - name: print some facts
+    tasks:
+      - name: print some facts
         debug:
-           msg: Hostname == {{ ansible_hostname }}
+          msg: Hostname == {{ ansible_hostname }}
 
 
