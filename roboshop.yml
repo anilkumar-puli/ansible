@@ -1,0 +1,7 @@
+- name: todo project
+  hosts: all
+  tasks:
+    - name: apt update
+      apt:
+        name: nginx
+        update_cache: yes
