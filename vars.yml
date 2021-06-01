@@ -26,7 +26,7 @@
   #vars
 #inventory variable
 - name: Demo on dynamic vars
-  hosts: all
+  hosts: localhost
   tasks:
     - name: gather date
       shell: date +%F
