@@ -13,9 +13,9 @@
         enabled: yes
     - name: download artifacts
       get_url:
-        url: http://34.232.48.79:8081/repository/frontend/frontend-main-{{APP_VERSION}}.zip
+        url: http://34.232.48.79:8081/repository/frontend/frontend-main-{{APP_VERSION}}}.zip
         dest: /tmp/frontend.zip
-        username: admin
+        username:
         password: admin
 
     - name: install npm
