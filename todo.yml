@@ -13,7 +13,7 @@
         enabled: yes
     - name: download foo.conf
       get_url:
-        url: http://http://34.201.8.112:8081/repository/frontend/frontend-main-{{APP_VERSION}}.zip
+        url: http://http://34.201.8.112:8081/repository/frontend/frontend-main.zip
         dest: /tmp/frontend-main.zip
         username: admin
         password: admin
