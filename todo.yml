@@ -19,6 +19,11 @@
         username: admin
         password: admin
 
+    - unarchive:
+        src: /tmp/frontend-main.zip
+        dest: /home/ubuntu
+        remote_src: True
+
     - name: install npm
       apt:
         name: npm
