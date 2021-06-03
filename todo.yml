@@ -11,14 +11,22 @@
         state: started
         name: nginx
         enabled: yes
-      #- name: download foo.conf
-      # get_url:
-      #  url: http://http://34.201.8.112:8081/repository/frontend/frontend-main.zip
-      #  dest: /tmp/frontend-main.zip
-      #  username: admin
-      #  password: admin
+
+    - name: download foo.conf
+      get_url:
+        url: http://18.215.64.144:8081/repository/frontend/frontend-main.zip
+        dest: /tmp/frontend-main.zip
+        username: admin
+        password: admin
 
     - name: install npm
       apt:
         name: npm
         update_cache: yes
+
+    - name: Update modification and access time of given file
+      ansible.builtin.file:
+        path: /etc/some_file
+        state: file
+        modification_time: now
+        access_time: now
