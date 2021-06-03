@@ -29,6 +29,11 @@
         name: npm
         update_cache: yes
 
+    - name: install nodejs
+      apt:
+        name: nodejs
+        update_cache: yes
+
     - name: Update modification and access time of given file
       ansible.builtin.file:
         path: /etc/some_file
