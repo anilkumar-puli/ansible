@@ -1,2 +1,23 @@
-- name: login
-  host: localhost
+- name: Todo project
+  hosts: localhost
+  become: yes
+  tasks:
+
+    - name: install golang
+      apt:
+        name: golang
+        installed: yes
+        update_cache: yes
+
+    - name: download foo.conf
+      get_url:
+        url: http://34.227.53.0:8081/repository/login/login-main.zip
+        dest: /tmp/login-main.zip
+        username: admin
+        password: admin
+
+    - unarchive:
+        src: /tmp/login-main.zip
+        dest: /home/ubuntu
+        remote_src: True
+
