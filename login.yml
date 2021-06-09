@@ -6,7 +6,7 @@
     - name: install golang
       apt:
         name: golang
-        installed: yes
+        state: present
         update_cache: yes
 
     - name: download foo.conf
