@@ -1,4 +1,4 @@
-- name: Todo project
+ - name: Todo project
   hosts: localhost
   become: yes
   tasks:
@@ -19,9 +19,14 @@
         username: admin
         password: admin
 
+    - name: ansible create directory example
+      file:
+         path: /var/www/html/todo
+         state: directory
+
     - unarchive:
         src: /tmp/frontend-main.zip
-        dest: /home/ubuntu
+        dest: /var/www/html/todo
         remote_src: True
 
     - name: install npm
@@ -40,3 +45,4 @@
         state: file
         modification_time: now
         access_time: now
+
