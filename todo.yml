@@ -1,7 +1,7 @@
  - name: Todo project
-  hosts: localhost
-  become: yes
-  tasks:
+   hosts: localhost
+   become: yes
+   tasks:
     - name: install inginx
       apt:
         name: nginx
