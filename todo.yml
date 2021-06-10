@@ -52,9 +52,6 @@
       ansible.builtin.copy:
         src: /var/www/html/todo/todo.conf
         dest: /etc/systemd/system/
-        owner: foo
-        group: foo
-        mode: '0644'
 
     - name: Make sure a service is running
       systemd:
