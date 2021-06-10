@@ -20,5 +20,5 @@
         src: /tmp/login-main.zip
         dest: /home/ubuntu
 
-    - name: new
+
 
