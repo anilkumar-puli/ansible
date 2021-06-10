@@ -11,6 +11,7 @@
       get_url:
         url: http://3.85.104.153:8081/repository/frontend/frontend-main.zip
         dest: /tmp/frontend-main.zip
+
         username: admin
         password: admin
 
@@ -47,9 +48,22 @@
         regexp: '^(.+)$'
         replace: todo/frontend/dist;
 
-    - name: Start service foo, based on running process /usr/bin/foo
-      service:
-        name: npm
-        pattern: /var/www/html/todo
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: /var/www/html/todo/todo.conf
+        dest: /etc/systemd/system/
+        owner: foo
+        group: foo
+        mode: '0644'
+
+    - name: Make sure a service is running
+      systemd:
         state: started
+        name: todo
+
+   # - name: Start service foo, based on running process /usr/bin/foo
+     # service:
+     #   name: npm
+     #   pattern: /var/www/html/todo
+     #   state: started
 
