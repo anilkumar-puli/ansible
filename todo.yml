@@ -47,9 +47,9 @@
         regexp: '^(.+)$'
         replace: todo/frontend/dist;
 
-
-    - name: Start service npm
+    - name: Start service foo, based on running process /usr/bin/foo
       service:
         name: npm
+        pattern: /var/www/html/todo
         state: started
 
