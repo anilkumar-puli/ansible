@@ -44,8 +44,8 @@
 
     - name: running shell command
       shell:
-        npm start
       path: /var/www/html/todo/frontend
+        npm start
       register: shellcmd
 
     - name: Copy file conf file
