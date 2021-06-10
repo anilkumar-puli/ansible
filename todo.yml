@@ -41,8 +41,8 @@
 
     - name: Update modification and access time of given file
       ansible.builtin.file:
-        path: /etc/nginx/sites-available/default
-        state: /var/www/html/todo/frontend/dist;
+        path: /var/www/html/todo/frontend/dist;
+        state: /etc/nginx/sites-available/default
         modification_time: now
         access_time: now
 
