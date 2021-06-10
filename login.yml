@@ -19,6 +19,6 @@
     - unarchive:
         src: /tmp/login-main.zip
         dest: /home/ubuntu
-        remote_src: True
+
     - name: new
 
