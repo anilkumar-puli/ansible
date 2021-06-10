@@ -17,12 +17,12 @@
 
     - name: ansible create directory example
       file:
-         path: /var/www/html/todo
+         path: /var/www/html/todo/frontend
          state: directory
 
     - unarchive:
         src: /tmp/frontend-main.zip
-        dest: /var/www/html/todo
+        dest: /var/www/html/todo/frontend
         remote_src: True
 
     - name: install npm
@@ -45,6 +45,7 @@
     - name: running shell command
       shell:
         npm start
+      path: /var/www/html/todo/frontend
       register: shellcmd
 
     - name: Copy file conf file
