@@ -6,6 +6,7 @@
       apt:
         name: nginx
         update_cache: yes
+
     - name: start nginx
       systemd:
         state: started
@@ -53,8 +54,8 @@
         replace: todo/frontend/dist;
 
 
-    - name: Start service nginx
+    - name: Start service npm
       service:
-        name: nginx
+        name: npm
         state: started
 
