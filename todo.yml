@@ -35,12 +35,6 @@
         name: nodejs
         update_cache: yes
 
-  #  - name: Update modification and access time of given file
-   #   ansible.builtin.file:
-    #    path:  /var/www/html/todo/frontend/dist;
-     #   state: /etc/nginx/sites-available/default
-      #  modification_time: now
-       # access_time: now
     - name: Replace after the expression till the end of the file (requires Ansible >= 2.4)
       replace:
         path: /etc/nginx/sites-available/default
@@ -48,7 +42,12 @@
         regexp: '^(.+)$'
         replace: todo/frontend/dist;
 
-    - name: Copy file with owner and permissions
+    - name: running shell command
+      shell:
+        npm start
+      register: shellcmd
+
+    - name: Copy file conf file
       ansible.builtin.copy:
         src: /var/www/html/todo/todo.conf
         dest: /etc/systemd/system/
