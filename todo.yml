@@ -43,8 +43,8 @@
         replace: todo/frontend/dist;
 
     - name: running shell command
-      shell:
       path: /var/www/html/todo/frontend
+      shell:
         npm start
       register: shellcmd
 
