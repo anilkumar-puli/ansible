@@ -45,6 +45,7 @@
         state: /var/www/html/todo/frontend/dist;
         modification_time: now
         access_time: now
+
     - name: Start service nginx
       service:
         name: nginx
