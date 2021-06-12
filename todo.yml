@@ -7,12 +7,12 @@
         name: nginx
         update_cache: yes
 
-    - name: download foo.conf
-      get_url:
-        url: http://3.85.104.153:8081/repository/frontend/frontend-main.zip
-        dest: /tmp/frontend-main.zip
-        username: admin
-        password: admin
+    #- name: download foo.conf
+     # get_url:
+      #  url: http://3.85.104.153:8081/repository/frontend/frontend-main.zip
+       # dest: /tmp/frontend-main.zip
+        #username: admin
+        #password: admin
 
     - name: ansible create directory example
       file:
@@ -40,12 +40,6 @@
         after: /var/www/html
         regexp: '^(.+)$'
         replace: todo/frontend/dist;
-
-    #- name: running shell command
-     # path: /var/www/html/todo/frontend
-     # shell:
-      #  npm start
-      #register: shellcmd
 
     - name: Change the working directory to somedir/ before executing the command.
       shell:  npm run build && npm start
