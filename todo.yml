@@ -5,7 +5,7 @@
     - name: install inginx
       apt:
         name: nginx
-        state: installed
+        state: present
         update_cache: yes
 
     - name: download foo.conf
