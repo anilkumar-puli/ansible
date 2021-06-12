@@ -41,11 +41,21 @@
         regexp: '^(.+)$'
         replace: todo/frontend/dist;
 
-    - name: running shell command
-      path: /var/www/html/todo/frontend
-      shell:
-        npm start
-      register: shellcmd
+    #- name: running shell command
+     # path: /var/www/html/todo/frontend
+     # shell:
+      #  npm start
+      #register: shellcmd
+
+    - name: Change the working directory to somedir/ before executing the command.
+      shell:  npm run build && npm start
+      args:
+        chdir: /var/www/html/todo/frontend
+
+   # - name: Execute a command using the shell module
+    #    become: true
+     #   become_user: root
+      #  shell: npm start
 
     - name: Copy file conf file
       ansible.builtin.copy:
