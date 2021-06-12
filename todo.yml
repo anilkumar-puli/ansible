@@ -9,7 +9,7 @@
         state: latest
 
     - name: start nginx
-      service:
+      systemd:
          name: nginx
          state: started
 
