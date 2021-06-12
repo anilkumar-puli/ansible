@@ -2,11 +2,13 @@
    hosts: localhost
    become: yes
    tasks:
-    - name: install inginx
-      apt:
-        name: nginx
-        state: present
-        update_cache: yes
+
+    - name: ensure nginx is at the latest version
+         apt: name=nginx state=latest
+    - name: start nginx
+      service:
+         name: nginx
+         state: started
 
     - name: download foo.conf
       get_url:
@@ -61,8 +63,13 @@
       systemd:
         state: started
         name: todo
+    - name: start nginx
+        service:
+          name: nginx
+          state: started
 
-   # - name: Start service foo, based on running process /usr/bin/foo
+
+     # - name: Start service foo, based on running process /usr/bin/foo
      # service:
      #   name: npm
      #   pattern: /var/www/html/todo
