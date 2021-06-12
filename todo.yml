@@ -5,6 +5,7 @@
     - name: install inginx
       apt:
         name: nginx
+        state: installed
         update_cache: yes
 
     - name: download foo.conf
@@ -41,7 +42,7 @@
         regexp: '^(.+)$'
         replace: todo/frontend/dist;
 
-    - name: Change the working directory to somedir/ before executing the command.
+    - name: Change the working directory to somedir and start npm
       shell:  npm run build && npm start
       args:
         chdir: /var/www/html/todo/frontend
