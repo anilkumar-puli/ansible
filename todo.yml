@@ -3,11 +3,11 @@
    become: yes
    tasks:
 
-     - name: install inginx
+    - name: install inginx
          apt:
            name: nginx
            update_cache: yes
-      - name: start nginx
+    - name: start nginx
         systemd:
           state: started
           name: nginx
