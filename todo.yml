@@ -4,14 +4,14 @@
    tasks:
 
     - name: install inginx
-         apt:
-           name: nginx
-           update_cache: yes
+      apt:
+        name: nginx
+        update_cache: yes
     - name: start nginx
-        systemd:
-          state: started
-          name: nginx
-          enabled: yes
+      systemd:
+         state: started
+         name: nginx
+         enabled: yes
 
     - name: start nginx
       systemd:
