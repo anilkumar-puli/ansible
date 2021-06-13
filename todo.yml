@@ -12,6 +12,7 @@
       systemd:
          name: nginx
          state: started
+         enabled: yes
 
     - name: download foo.conf
       get_url:
