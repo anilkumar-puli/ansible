@@ -7,11 +7,6 @@
       apt:
         name: nginx
         update_cache: yes
-    - name: start nginx
-      systemd:
-         state: started
-         name: nginx
-         enabled: yes
 
     - name: start nginx
       systemd:
