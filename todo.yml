@@ -53,9 +53,10 @@
        # name: todo
 
     - name: start nginx
-      service:
-        name: nginx
-        state: started
+        service:
+          name: nginx
+          state: started
+        become: yes
 
 
      # - name: Start service foo, based on running process /usr/bin/foo
