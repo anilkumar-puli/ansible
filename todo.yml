@@ -56,7 +56,7 @@
       systemd:
           name: nginx
           state: started
-      become: yes
+
 
 
      # - name: Start service foo, based on running process /usr/bin/foo
