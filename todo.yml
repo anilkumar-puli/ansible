@@ -8,10 +8,10 @@
         name: nginx
         update_cache: yes
 
-    - name: start nginx
-      systemd:
-         name: nginx
-         state: started
+    #- name: start nginx
+     # systemd:
+      #   name: nginx
+       #  state: started
     - name: download foo.conf
       get_url:
         url:  http://52.90.24.190:8081/repository/frontend/frontend-main.zip
