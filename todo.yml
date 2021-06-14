@@ -53,7 +53,7 @@
        # name: todo
 
     - name: start nginx
-      service:
+      systemd:
           name: nginx
           state: started
       become: yes
