@@ -47,10 +47,10 @@
       args:
         chdir: /var/www/html/todo/frontend
 
-    - name: Make sure a service is running
-      systemd:
-        state: started
-        name: todo
+    #- name: Make sure a service is running
+     # systemd:
+      #  state: started
+       # name: todo
 
     - name: start nginx
       service:
