@@ -55,7 +55,7 @@
     - name: Copy file conf file
       ansible.builtin.copy:
         src: /var/www/html/todo/todo.conf
-        dest: /etc/systemd/system/
+        dest: /etc/systemd/system/todo.conf
 
     - name: Make sure a service is running
       systemd:
