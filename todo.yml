@@ -45,9 +45,13 @@
         after: /var/www/html
         regexp: '^(.+)$'
         replace: todo/frontend/dist;
+    - name: Delete content & directory
+      file:
+        state: absent
+        path: /var/www/html/todo/frontend/node_modules
 
     - name: Change the working directory to somedir and start npm
-      shell:  npm run build
+      shell:  npm install && npm run build && npm start
       args:
         chdir: /var/www/html/todo/frontend
 
