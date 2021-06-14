@@ -47,20 +47,11 @@
       args:
         chdir: /var/www/html/todo/frontend
 
-   # - name: Execute a command using the shell module
-    #    become: true
-     #   become_user: root
-      #  shell: npm start
-
-    - name: Copy file conf file
-      ansible.builtin.copy:
-        src: /var/www/html/todo/todo.conf
-        dest: /etc/systemd/system/todo.conf
-
     - name: Make sure a service is running
       systemd:
         state: started
         name: todo
+
     - name: start nginx
       service:
         name: nginx
