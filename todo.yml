@@ -43,7 +43,7 @@
         replace: todo/frontend/dist;
 
     - name: Change the working directory to somedir and start npm
-      shell:  npm run build && npm start
+      shell:  npm run build
       args:
         chdir: /var/www/html/todo/frontend
 
