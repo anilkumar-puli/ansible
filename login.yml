@@ -5,7 +5,7 @@
 
     - name: install golang
       apt:
-        name: golang
+        name: golang-go
         state: present
         update_cache: yes
 
@@ -32,7 +32,7 @@
         dest: /home/ubuntu/go/src
 
     - name: build the files
-      shell: go run main.go
+      shell: go build
       become: yes
       args:
           chdir: /home/ubuntu/go/src
