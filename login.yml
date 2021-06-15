@@ -23,7 +23,7 @@
         password: admin
 
     - name: ansible create directory example
-        file:
+      file:
           path: go/src
           state: directory
 
