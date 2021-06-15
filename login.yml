@@ -24,7 +24,7 @@
 
     - name: ansible create directory example
       file:
-          path: go/src
+          path: /home/ubuntu/go/src
           state: directory
 
     - unarchive:
