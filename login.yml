@@ -31,9 +31,10 @@
         src: /tmp/login-main.zip
         dest: /home/ubuntu/go/src
 
-    - name: start build
-      shell:
-         go build
-      register: shellcmd
+    - name: Change the working directory to somedir and start npm
+      shell: npm start
+      become: yes
+      args:
+          chdir: /home/ubuntu/go/src
 
 
