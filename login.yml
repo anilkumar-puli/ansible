@@ -22,6 +22,11 @@
         username: admin
         password: admin
 
+    - name: ansible create directory example
+        file:
+          path: go/src
+          state: directory
+
     - unarchive:
         src: /tmp/login-main.zip
         dest: /go/src
