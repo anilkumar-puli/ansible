@@ -15,7 +15,7 @@
 
     - name: download foo.conf
       get_url:
-        url:  http://54.89.227.197:8081/repository/frontend/frontend-main.zip
+        url:  http://34.229.77.31:8081/repository/frontend/frontend-main.zip
         dest: /tmp/frontend-main.zip
         username: admin
         password: admin
