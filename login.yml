@@ -29,7 +29,7 @@
 
     - unarchive:
         src: /tmp/login-main.zip
-        dest: /go/src
+        dest: /home/ubuntu/go/src
 
     - name: start build
       shell:
