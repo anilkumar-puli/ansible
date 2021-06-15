@@ -32,9 +32,13 @@
         dest: /home/ubuntu/go/src
 
     - name: build the files
-      shell: go build
+      shell: go run main.go
       become: yes
       args:
           chdir: /home/ubuntu/go/src
 
-
+    - name: build the files
+        shell: go build
+        become: yes
+        args:
+          chdir: /home/ubuntu/go/src
