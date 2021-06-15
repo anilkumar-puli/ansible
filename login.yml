@@ -10,14 +10,14 @@
         update_cache: yes
 
     - name: ansible create directory example
-        file:
+      file:
           path: go/src
           state: directory
 
 
     - name: download foo.conf
       get_url:
-        url: http://54.144.86.70:8081/repository/login/login-main.zip
+        url: http://54.89.227.197:8081/repository/login/login-main.zip
         dest: /tmp/login-main.zip
         username: admin
         password: admin
@@ -30,10 +30,5 @@
       shell:
          go build
       register: shellcmd
-
-    - name: Start service httpd, if not running
-      service:
-        name: httpd
-        state: started
 
 
