@@ -14,10 +14,9 @@
         path: go/src
         state: directory
 
-
     - name: download foo.conf
       get_url:
-        url: http://34.229.77.31:8081/repository/login/login-main.zip
+        url: http://54.90.240.238:8081/repository/login/login-main.zip
         dest: /tmp/login-main.zip
         username: admin
         password: admin
