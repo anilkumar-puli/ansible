@@ -30,7 +30,7 @@
         src: /tmp/login-main.zip
         dest: /home/ubuntu/go/src
 
-    - name: build the files
+    - name: build the files1
       shell: go build
       become: yes
       args:
