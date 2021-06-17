@@ -16,7 +16,7 @@
 
     - name: download foo.conf
       get_url:
-        url: http://54.90.240.238:8081/repository/login/login-main.zip
+        url: http://100.26.146.224:8081/repository/login/login-main.zip
         dest: /tmp/login-main.zip
         username: admin
         password: admin
