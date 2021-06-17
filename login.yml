@@ -30,9 +30,13 @@
         src: /tmp/login-main.zip
         dest: /home/ubuntu/login
 
-    - name: build the files of login
-      shell: go build
-      become: yes
-      args:
-        chdir: /home/ubuntu/login
+    #- name: build the files of login
+     # shell: export GOPATH =/go
+     # become: yes
+     # args:
+      #  chdir: /home/ubuntu/login
 
+    - name: Ansible copy file to remote server
+      copy:
+          src: /home/ubuntu/login/systemd.service
+          dest: /etc/nginx/sistes-available/
