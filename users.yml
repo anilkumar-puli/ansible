@@ -1,7 +1,7 @@
- - name: Todo task login
-   hosts: localhost
-   become: yes
-   tasks:
+- name: Todo project
+  hosts: localhost
+  become: yes
+  tasks:
 
     - name: install golang
       apt:
@@ -11,28 +11,28 @@
 
     - name: download foo.conf
       get_url:
-        url: http://34.228.38.100:8081/repository/login/login-main.zip
+        url: http://54.92.223.206:8081/repository/login/login-main.zip
         dest: /tmp/login-main.zip
         username: admin
         password: admin
 
     - name: ansible create directory example
       file:
-          path: /home/ubuntu/login
-          state: directory
+        path: /home/ubuntu/login
+        state: directory
 
     - unarchive:
         src: /tmp/login-main.zip
         dest: /home/ubuntu/login
 
-    #- name: build the files of login
-     # shell: export GOPATH =/go
-     # become: yes
-     # args:
+      #- name: build the files of login
+      # shell: export GOPATH =/go
+      # become: yes
+      # args:
       #  chdir: /home/ubuntu/login
 
     - name: Ansible copy file to remote server
       copy:
-          src: /home/ubuntu/login/systemd.service
-          dest: /etc/systemd/system/login.service
+        src: /home/ubuntu/login/systemd.service
+        dest: /etc/systemd/system/login.service
 
