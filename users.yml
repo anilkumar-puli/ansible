@@ -29,7 +29,7 @@
     - name: Change the working directory to somedir and start npm
       shell: mvn compile package
       become: yes
-        args:
+      args:
           chdir: /home/ubuntu
 
       #- name: build the files of login
