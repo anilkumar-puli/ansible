@@ -3,10 +3,10 @@
   become: yes
   tasks:
 
-   - name: Update all Ubuntu packages
-     apt:
-       upgrade: "dist"
-     when: ansible_distribution == 'Ubuntu'
+    - name: Update all Ubuntu packages
+      apt:
+        upgrade: "dist"
+      when: ansible_distribution == 'Ubuntu'
 
     - name: Install required Ubuntu packages
       apt:
@@ -16,7 +16,7 @@
         packages:
         - openjdk-8-jdk
 
-    #- name: install java
+     #- name: install java
      # apt:
       #  name: openjdk-8-jdk
        # state: present
