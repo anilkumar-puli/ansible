@@ -25,9 +25,10 @@
       apt:
         name: maven
         state: latest
+
     - name: Change the working directory to somedir and start npm
-        shell: mvn compile package
-        become: yes
+      shell: mvn compile package
+      become: yes
         args:
           chdir: /home/ubuntu
 
