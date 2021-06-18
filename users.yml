@@ -8,12 +8,12 @@
        upgrade: "dist"
      when: ansible_distribution == 'Ubuntu'
 
-  - name: Install required Ubuntu packages
-    apt:
-     name: "{{ packages }}"
-     state: present
-    vars:
-      packages:
+   - name: Install required Ubuntu packages
+     apt:
+       name: "{{ packages }}"
+       state: present
+     vars:
+       packages:
        - openjdk-8-jdk
 
     #- name: install java
