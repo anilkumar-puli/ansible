@@ -39,20 +39,18 @@
         name: maven
         state: latest
 
-    - name: Change the working directory to somedir and start npm
-      shell: mvn compile package
-      become: yes
-      args:
-          chdir: /home/ubuntu
+    #- name: build packages
+     # shell: mvn compile package
+      #become: yes
+      #args:
+       #   chdir: /home/ubuntu
 
-       #- name: build the files of login
-       # shell: export GOPATH =/go
-       # become: yes
-       # args:
-       #  chdir: /home/ubuntu/login
+    - name: Running mvn clean
+      shell: "mvn clean install"
+      register: mvn_result
 
     - name: Ansible copy file to remote server
       copy:
         src: /home/ubuntu/systemd.service
-        dest: /etc/systemd/system/user.service
+        dest: /etc/systemd/system/users.service
 
