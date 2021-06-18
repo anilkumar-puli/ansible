@@ -36,11 +36,11 @@
           src: /home/ubuntu/login/systemd.service
           dest: /etc/systemd/system/login.service
 
-    - name: restart service cron on centos, in all cases, also issue daemon-reload to pick up config changes
+    - name: start service
       systemd:
         state: restarted
         daemon_reload: yes
-        name: crond
+        name: login
 
     - name: starting service
       systemd:
