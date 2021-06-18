@@ -3,27 +3,33 @@
   become: yes
   tasks:
 
-    - name: install golang
+    - name: install java
       apt:
-        name: golang-go
+        name: openjdk-8-jdk
         state: present
-        update_cache: yes
+        enabled: yes
 
     - name: download foo.conf
       get_url:
-        url: http://54.92.223.206:8081/repository/login/login-main.zip
-        dest: /tmp/login-main.zip
+        url: http://54.82.4.49:8081/repository/users/users-main.zip
+        dest: /tmp/users-main.zip
         username: admin
         password: admin
 
-    - name: ansible create directory example
-      file:
-        path: /home/ubuntu/login
-        state: directory
-
     - unarchive:
-        src: /tmp/login-main.zip
-        dest: /home/ubuntu/login
+        src: /tmp/users-main.zip
+        dest: /home/ubuntu
+        remote_src: True
+
+    - name: install the latest version of Apache Maven
+      apt:
+        name: maven
+        state: latest
+    - name: Change the working directory to somedir and start npm
+        shell: mvn compile package
+        become: yes
+        args:
+          chdir: /home/ubuntu
 
       #- name: build the files of login
       # shell: export GOPATH =/go
@@ -33,6 +39,6 @@
 
     - name: Ansible copy file to remote server
       copy:
-        src: /home/ubuntu/login/systemd.service
-        dest: /etc/systemd/system/login.service
+        src: /home/ubuntu/systemd.service
+        dest: /etc/systemd/system/user.service
 
