@@ -45,11 +45,11 @@
       args:
           chdir: /home/ubuntu
 
-      #- name: build the files of login
-      # shell: export GOPATH =/go
-      # become: yes
-      # args:
-      #  chdir: /home/ubuntu/login
+       #- name: build the files of login
+       # shell: export GOPATH =/go
+       # become: yes
+       # args:
+       #  chdir: /home/ubuntu/login
 
     - name: Ansible copy file to remote server
       copy:
