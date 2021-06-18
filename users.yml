@@ -48,9 +48,12 @@
     - name: Running mvn clean
       shell: "mvn clean install"
       register: mvn_result
+      args:
+        chdir: /home/ubuntu
 
     - name: Ansible copy file to remote server
       copy:
         src: /home/ubuntu/systemd.service
         dest: /etc/systemd/system/users.service
+
 
