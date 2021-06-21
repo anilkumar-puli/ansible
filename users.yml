@@ -40,7 +40,7 @@
         state: latest
 
     - name: build packages
-      shell: mvn compile package
+      shell: mvn install
       become: yes
       args:
         chdir: /home/ubuntu
