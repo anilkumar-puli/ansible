@@ -45,15 +45,10 @@
         #args:
         #   chdir: /home/ubuntu
 
-    - name: Execute the command in remote shell; stdout goes to the specified file on the remote.
-      shell: mvn install
-      args:
-        chdir: /home/ubuntu
-
-    - name: Change the working directory to somedir/ before executing the command
-      ansible.builtin.shell: mvn install
-      args:
-        chdir: /home/ubuntu
+        #- name: Change the working directory to somedir/ before executing the command
+        # ansible.builtin.shell: mvn install
+        #args:
+        # chdir: /home/ubuntu
 
     - name: Ansible copy file to remote server
       copy:
