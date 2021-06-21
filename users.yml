@@ -39,11 +39,11 @@
         name: maven
         state: latest
 
-        #- name: build packages
-        # shell: mvn compile package
-        #become: yes
-        #args:
-        #   chdir: /home/ubuntu
+    - name: build packages
+      shell: mvn compile package
+      become: yes
+        args:
+          chdir: /home/ubuntu
 
         #- name: Change the working directory to somedir/ before executing the command
         # ansible.builtin.shell: mvn install
