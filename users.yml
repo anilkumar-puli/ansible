@@ -47,8 +47,8 @@
 
     - name: Change the working directory to somedir/ before executing the command
       ansible.builtin.shell: mvn install
-        args:
-          chdir: /home/ubuntu
+      args:
+        chdir: /home/ubuntu
 
     - name: Ansible copy file to remote server
       copy:
